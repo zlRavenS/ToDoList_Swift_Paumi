@@ -9,19 +9,26 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
     
-    var myData = [ToDoList]()
+    var myData = [Pokemon]()
     
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        var pokemons = ["Arcko","Massko","Jungko","Poussifeu","Galifeu","Brasegali","Gobou","Flobio","Laggron","Medhyèna","Grahyèna","Zigzaton","Linéon","Chenipotte","Armulys","Charmillon","Blindalys","Papinox","Nénupiot","Lombre","Ludicolo","Nénupiot","Pifeuil","Tangalice","Nirondelle","Hélédelle","Goélise","Bekipan","Tarsal","Kirlia","Gardevoir","Arakdo","Maskadra","balignon","Chapignon","Parecool","Vigoroth","Monaflèmit","Abra","Kadabra","Alakazam","Ningale","Ninjask","Munja","Chuchmur","Ramboum","Brouhabam","Makuhita","Hariyama","Possirène"]
         
-        for i in 1...50 {
+        
             
-            myData.append(ToDoList(nom: "Tâche n°" + String(i),
-                                 details: "Description de la tâche n°" + String(i)))
+        for i in 0...49 {
+            if i<9 {
+                myData.append(Pokemon(nom: pokemons[i], details: "Description du Pokémon n°" + String(i+1), numero: "#00" + String(i+1), photo: String(i+1)))
+            }
+            else {
+                myData.append(Pokemon(nom: pokemons[i], details: "Description du Pokémon n°" + String(i+1), numero: "#0" + String(i+1), photo: String(i+1)))
+            }
         }
+        
         
         myTableView.dataSource = self
     }
@@ -34,6 +41,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
         cell.myName.text = myData[indexPath.row].nom
+        cell.myNumero.text = myData[indexPath.row].numero
+        cell.myPhoto.image = UIImage(named: myData[indexPath.row].photo)
         return cell
     }
     
@@ -62,9 +71,9 @@ class ViewController: UIViewController, UITableViewDataSource {
             addViewController.dismiss(animated: true, completion: nil)
         }
         if unwindSegue.identifier == "save" {
-            if let myNom = addViewController.myTitle.text, let myDetails = addViewController.myDescription.text {
-                let new_data = ToDoList(nom: myNom,
-                                      details: myDetails)
+            if let myNom = addViewController.myTitle.text, let myDetails = addViewController.myDescription.text, let myNumero = addViewController.myNumber.text{
+                let new_data = Pokemon(nom: myNom,
+                                        details: myDetails, numero: myNumero, photo: String(1))
                 myData.append(new_data)
                 myTableView.reloadData()
             }

@@ -10,7 +10,10 @@ import UIKit
 class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var myName: UILabel!
+    @IBOutlet weak var myNumero: UILabel!
     @IBOutlet weak var mySwitch: UISwitch!
+    @IBOutlet weak var myTrash: UIButton!
+    @IBOutlet weak var myPhoto: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -16,7 +16,7 @@
 		70032B32275675A000F8AE83 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70032B31275675A000F8AE83 /* TableViewCell.swift */; };
 		70E18D3C2756DBDA00A92CAF /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E18D3B2756DBDA00A92CAF /* DetailsViewController.swift */; };
 		70E18D3E2756E38E00A92CAF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E18D3D2756E38E00A92CAF /* AddViewController.swift */; };
-		98434D062761E7A5005CAA8D /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98434D052761E7A5005CAA8D /* ToDoList.swift */; };
+		98434D062761E7A5005CAA8D /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98434D052761E7A5005CAA8D /* Pokemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		70032B31275675A000F8AE83 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		70E18D3B2756DBDA00A92CAF /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		70E18D3D2756E38E00A92CAF /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		98434D052761E7A5005CAA8D /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
+		98434D052761E7A5005CAA8D /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 				70032B1F27566F2700F8AE83 /* SceneDelegate.swift */,
 				70032B2127566F2700F8AE83 /* ViewController.swift */,
 				70E18D3B2756DBDA00A92CAF /* DetailsViewController.swift */,
-				98434D052761E7A5005CAA8D /* ToDoList.swift */,
+				98434D052761E7A5005CAA8D /* Pokemon.swift */,
 				70032B31275675A000F8AE83 /* TableViewCell.swift */,
 				70032B2327566F2700F8AE83 /* Main.storyboard */,
 				70E18D3D2756E38E00A92CAF /* AddViewController.swift */,
@@ -152,7 +152,7 @@
 			files = (
 				70032B2227566F2700F8AE83 /* ViewController.swift in Sources */,
 				70E18D3E2756E38E00A92CAF /* AddViewController.swift in Sources */,
-				98434D062761E7A5005CAA8D /* ToDoList.swift in Sources */,
+				98434D062761E7A5005CAA8D /* Pokemon.swift in Sources */,
 				70032B32275675A000F8AE83 /* TableViewCell.swift in Sources */,
 				70032B1E27566F2700F8AE83 /* AppDelegate.swift in Sources */,
 				70032B2027566F2700F8AE83 /* SceneDelegate.swift in Sources */,

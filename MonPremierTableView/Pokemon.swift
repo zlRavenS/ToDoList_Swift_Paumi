@@ -8,12 +8,16 @@
 import UIKit
 import Foundation
 
-class ToDoList: NSObject {
+class Pokemon: NSObject {
     var nom: String
+    var numero: String
     var details: String
+    var photo: String
     
-    init(nom: String, details: String) {
+    init(nom: String, details: String, numero: String, photo: String) {
+        self.numero = numero
         self.nom = nom
         self.details = details
+        self.photo = photo
     }
 }

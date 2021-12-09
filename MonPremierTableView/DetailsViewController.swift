@@ -9,18 +9,22 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    var myToDoList: ToDoList?
+    var myToDoList: Pokemon?
 
 
     @IBOutlet weak var myName: UILabel!
     @IBOutlet weak var myDetails: UILabel!
+    @IBOutlet weak var myPhoto: UIImageView!
+    @IBOutlet weak var myNumero: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let data = myToDoList {
+            myPhoto.image = UIImage(named: data.photo)
             myName.text = data.nom
             myDetails.text = data.details
+            myNumero.text = data.numero
             
         }
 
