@@ -9,18 +9,18 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    var myData: MyData?
+    var myToDoList: ToDoList?
 
-    @IBOutlet weak var myDescription: UILabel!
-    @IBOutlet weak var myTitle: UILabel!
-    @IBOutlet weak var myImage: UIImageView!
+    @IBOutlet weak var myDetails: UILabel!
+    @IBOutlet weak var myNom: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let data = myData {
-            myTitle.text = data.title
-            myDescription.text = data.description
-            myImage.image = UIImage(named: data.image)
+        if let data = myToDoList {
+            myNom.text = data.nom
+            myDetails.text = data.description
+            
         }
 
         // Do any additional setup after loading the view.

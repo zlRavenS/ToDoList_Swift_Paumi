@@ -9,9 +9,8 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var myDescription: UILabel!
-    @IBOutlet weak var myTitle: UILabel!
-    @IBOutlet weak var myImage: UIImageView!
+    @IBOutlet weak var myName: UILabel!
+    @IBOutlet weak var myDetails: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

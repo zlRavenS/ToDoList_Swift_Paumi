@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
     
-    var myData = [MyData]()
+    var myData = [ToDoList]()
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -19,9 +19,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         for i in 1...50 {
             
-            myData.append(MyData(title: "Voiture " + String(i),
-                                 description: "Description de la voiture " + String(i) + "\n Superbe voiture, peu de km, parfait entretien",
-                                 image: String(Int.random(in: 1...5))))
+            myData.append(ToDoList(nom: "Tâche n°" + String(i),
+                                 details: "Description de la tâche n°" + String(i)))
         }
         
         myTableView.dataSource = self
@@ -34,9 +33,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
-        cell.myTitle.text = myData[indexPath.row].title
-        cell.myDescription.text = myData[indexPath.row].description
-        cell.myImage.image = UIImage(named: myData[indexPath.row].image)
+        cell.myName.text = myData[indexPath.row].nom
+        cell.myDetails.text = myData[indexPath.row].details
         return cell
     }
     
@@ -54,7 +52,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             let detailsViewController = segue.destination as! DetailsViewController
             let myIndexPath = myTableView.indexPathForSelectedRow!
             let row = myIndexPath.row
-            detailsViewController.myData = myData[row]
+            detailsViewController.myToDoList = myData[row]
         }
     }
     
@@ -65,10 +63,9 @@ class ViewController: UIViewController, UITableViewDataSource {
             addViewController.dismiss(animated: true, completion: nil)
         }
         if unwindSegue.identifier == "save" {
-            if let myTitle = addViewController.myTitle.text, let myDescription = addViewController.myDescription.text {
-                let new_data = MyData(title: myTitle,
-                                      description: myDescription,
-                                      image: String(Int.random(in: 1...5)))
+            if let myNom = addViewController.myTitle.text, let myDetails = addViewController.myDescription.text {
+                let new_data = ToDoList(nom: myNom,
+                                      details: myDetails)
                 myData.append(new_data)
                 myTableView.reloadData()
             }
