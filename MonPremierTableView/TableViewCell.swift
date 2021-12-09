@@ -2,7 +2,7 @@
 //  TableViewCell.swift
 //  MonPremierTableView
 //
-//  Created by d0m on 30/11/2021.
+//  Created by Remi Lefaivre on 09/12/2021.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import UIKit
 class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var myName: UILabel!
-    @IBOutlet weak var myDetails: UILabel!
+    @IBOutlet weak var mySwitch: UISwitch!
     
     override func awakeFromNib() {
         super.awakeFromNib()

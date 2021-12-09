@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  MonPremierTableView
 //
-//  Created by d0m on 30/11/2021.
+//  Created by Remi Lefaivre on 09/12/2021.
 //
 
 import UIKit
@@ -34,7 +34,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
         cell.myName.text = myData[indexPath.row].nom
-        cell.myDetails.text = myData[indexPath.row].details
         return cell
     }
     

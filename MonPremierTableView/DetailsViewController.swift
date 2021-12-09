@@ -2,7 +2,7 @@
 //  DetailsViewController.swift
 //  MonPremierTableView
 //
-//  Created by d0m on 30/11/2021.
+//  Created by Paul Ledoux on 09/12/2021.
 //
 
 import UIKit
@@ -11,15 +11,16 @@ class DetailsViewController: UIViewController {
     
     var myToDoList: ToDoList?
 
+
+    @IBOutlet weak var myName: UILabel!
     @IBOutlet weak var myDetails: UILabel!
-    @IBOutlet weak var myNom: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let data = myToDoList {
-            myNom.text = data.nom
-            myDetails.text = data.description
+            myName.text = data.nom
+            myDetails.text = data.details
             
         }
 
