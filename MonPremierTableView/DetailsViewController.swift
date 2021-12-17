@@ -16,6 +16,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var myDetails: UILabel!
     @IBOutlet weak var myPhoto: UIImageView!
     @IBOutlet weak var myNumero: UILabel!
+    @IBOutlet weak var myType1: UIImageView!
+    @IBOutlet weak var myType2: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,13 @@ class DetailsViewController: UIViewController {
             myName.text = data.nom
             myDetails.text = data.details
             myNumero.text = data.numero
-            
+            myType1.image = UIImage(named: data.type1)
+            if data.type2 == "none" {
+                myType2.isHidden = true
+            }
+            else {
+                myType2.image = UIImage(named: data.type2)
+            }
         }
 
         // Do any additional setup after loading the view.

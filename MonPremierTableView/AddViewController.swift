@@ -12,6 +12,8 @@ class AddViewController: UIViewController {
     @IBOutlet weak var myTitle: UITextField!
     @IBOutlet weak var myDescription: UITextField!
     @IBOutlet weak var myNumber: UITextField!
+    @IBOutlet weak var myType1: UITextField!
+    @IBOutlet weak var myType2: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()

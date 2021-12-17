@@ -14,6 +14,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var mySwitch: UISwitch!
     @IBOutlet weak var myTrash: UIButton!
     @IBOutlet weak var myPhoto: UIImageView!
+    @IBOutlet weak var myCapture: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
