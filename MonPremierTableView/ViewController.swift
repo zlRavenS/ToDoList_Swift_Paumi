@@ -11,6 +11,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     var myData = [Pokemon]()
     
+    @IBOutlet weak var mySearchBar: UISearchBar!
+    var searchResults: [Pokemon] = []
+    
+    
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
@@ -18,9 +22,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view.
         var pokemons = ["Arcko","Massko","Jungko","Poussifeu","Galifeu","Brasegali","Gobou","Flobio","Laggron","Medhyèna","Grahyèna","Zigzaton","Linéon","Chenipotte","Armulys","Charmillon","Blindalys","Papinox","Nénupiot","Lombre","Ludicolo","Nénupiot","Pifeuil","Tangalice","Nirondelle","Hélédelle","Goélise","Bekipan","Tarsal","Kirlia","Gardevoir","Arakdo","Maskadra","balignon","Chapignon","Parecool","Vigoroth","Monaflèmit","Abra","Kadabra","Alakazam","Ningale","Ninjask","Munja","Chuchmur","Ramboum","Brouhabam","Makuhita","Hariyama","Poissirène","Poissoroy","Magicarpe","Léviator","Azurill","Marill","Azumarill","Racaillou","Gravalanch","Grolem","Tarinor","Skitty","Delcatty","Nosferapti","Nosferalto","Nostenfer","Tentacool","Tentacruel","Ténéfix","Mysdibule","Galekid","Galegon","Galeking","Machoc","Machopeur","Mackogneur","Méditikka","Charmina","Dyanvolt","Elecsprint","Posipi","Négapi","Magnéti","Magnéton","Voltorbe","Electrode","Muciole","Lumivole","Mystherbe","Ortide","Rafflesia","Joliflor","Doduo","Dodrio","Rosélia","Gloupti","Avaltout","Carvanha","Sharpedo","Wailmer","Wailord","Chamallot","Camérupt","Limagma","Volcaropod","Chartor","Tadmorv","Grotadmorv","Smogo","Smogogo","Spoink","Groret","Sabelette","Sablaireau","Spinda","Airmure","Kraknoix","Vibraninf","Libégon","Cacnéa","Cacturne","Tylton","Altaria","Mangriff","Séviper","Séléroc","Solaroc","Barloche","Barbicha","Ecrapince","Colhomard","Balbuto","Kaorine","Lilia","Vacilys","Anorith","Armaldo","Toudoudou","Rondoudou","Groduoudou","Barpau","Milobelus","Mophéo","Stari","Staross","Kecleon","Polichombr","Branette","Skélenox","Téraclope","Tropius","Eoko","Absol","Goupix","Feunard","Pichu","Pikachu","Raichu","Psykokwak","Akwakwak","Okéoké","Qulbutoké","Natu","Xatu","Girafarig","Phanpy","Donphan","Scarabrute","Scarhino","Rhinocorne","Rhinoféros","Stalgamin","Oniglali","Obalie","Phogleur","Kaimorse","Coquiperl","Serpang","Rosabyss","Relicanth","Corayon","Loupio","Lanturn","Lovidisc","Hypotrempe","Hypocéan","Hyporoi","Draby","Drackhaus","Drattak","Terhal","Métang","Métalosse","Regirock","Regice","Registeel","Latias","Latios","Kyogre","Groudon","Rayquaza","Jirachi","Deoxys"]
         
-        var types1 = ["plante","plante","plante","feu","feu","feu","eau","eau","eau","tenebr","tenebr","normal","normal","insect","insect","insect","insect","insect","eau","eau","eau","plante","plante","plante","normal","normal","eau","eau","psy","psy","psy","insect","insect","plante","plante","normal","normal","normal","psy","psy","psy","insect","insect","insect","normal","normal","normal","combat","combat","eau"]
+        var types1 = ["plante","plante","plante","feu","feu","feu","eau","eau","eau","tenebr","tenebr","normal","normal","insect","insect","insect","insect","insect","eau","eau","eau","plante","plante","plante","normal","normal","eau","eau","psy","psy","psy","insect","insect","plante","plante","normal","normal","normal","psy","psy","psy","insect","insect","insect","normal","normal","normal","combat","combat","eau","eau","eau","eau","normal","eau","eau","roche","roche","roche","roche","normal","normal","poison","poison","poison","eau","eau","tenebr","acier","acier","acier","acier","combat","combat","combat","combat","combat","electr","electr","electr","electr","electr","electr","electr","electr","insect","insect","plante","plante","plante","plante","normal","normal","plante","poison","poison","eau","eau","eau","eau","feu","feu","feu","feu","feu","poison","poison","poison","poison","psy","psy","sol","sol","normal","acier","sol","sol","sol","plante","plante","normal","dragon","normal","poison","roche","roche","eau","eau","eau","eau","sol","sol","roche","roche","roche","roche","normal","normal","normal","eau","eau","normal","eau","eau","normal","spectr","spectr","spectr","spectr","plante","psy","tenebre","feu","feu","electr","electr","electr","eau","eau","psy","psy","psy","psy","normal","sol","sol","insect","insect","sol","sol","glace","glace","glace","glace","glace","eau","eau","eau","eau","eau","eau","eau","eau","eau","eau","eau","dragon","dragon","dragon","acier","acier","acier","roche","glace","acier","dragon","dragon","eau","sol","dragon","acier","psy"]
             
-        var types2 = ["none","none","none","none","combat","combat","none","sol","sol","none","none","none","none","none","none","vol","none","poison","plante","plante","plante","none","tenebr","tenebr","vol","vol","vol","vol","none","none","none","eau","vol","none","combat","none","none","none","none","none","none","sol","vol","spectr","none","none","none","none","none","none"]
+        var types2 = ["none","none","none","none","combat","combat","none","sol","sol","none","none","none","none","none","none","vol","none","poison","plante","plante","plante","none","tenebr","tenebr","vol","vol","vol","vol","none","none","none","eau","vol","none","combat","none","none","none","none","none","none","sol","vol","spectr","none","none","none","none","none","none","none","none","vol","none","none","none","sol","sol","sol","none","none","none","vol","vol","vol","poison","poison","spectr","none","roche","roche","roche","none","none","none","psy","psy","none","none","none","none","acier","acier","none","none","none","none","poison","poison","poison","none","vol","vol","poison","none","none","tenebr","tenebr","none","none","sol","sol","none","roche","none","none","none","none","none","none","none","none","none","none","vol","none","dragon","dragon","none","tenebr","vol","vol","none","none","psy","psy","sol","sol","none","tenebr","psy","psy","plante","plante","insect","insect","none","none","none","none","none","none","none","psy","none","none","none","none","none","vol","none","none","none","none","none","none","none","none","none","none","none","vol","vol","psy","none","none","none","combat","roche","roche","none","none","eau","eau","eau","none","none","none","roche","roche","electr","electr","none","none","none","dragon","none","none","vol","psy","psy","psy","none","none","none","psy","psy","none","none","vol","psy","none"]
         
         var descriptions =
             ["La plante de ses pieds est couverte d'épines qui lui permettent de marcher sur les murs et au plafond.",
@@ -78,17 +82,17 @@ class ViewController: UIViewController, UITableViewDataSource {
         
             
         for i in 0...201 {
-            if i<9 {
+            if i<=9 {
                 myData.append(Pokemon(nom: pokemons[i], details: descriptions[i], numero: "#00" + String(i+1), photo: String(i+1), type1: types1[i], type2: types2[i]))
             }
-            if i>9 && i<49 {
-                myData.append(Pokemon(nom: pokemons[i], details: "Description du Pokémon n°" + String(i+1), numero: "#0" + String(i+1), photo: String(i+1), type1: types1[i], type2: types2[i]))
-            }
-            if i>49 && i<99 {
+            if i>=10 && i<=49 {
                 myData.append(Pokemon(nom: pokemons[i], details: descriptions[i], numero: "#0" + String(i+1), photo: String(i+1), type1: types1[i], type2: types2[i]))
             }
-            else {
-                myData.append(Pokemon(nom: pokemons[i], details: descriptions[i], numero: "#" + String(i+1), photo: String(i+1), type1: types1[i], type2: types2[i]))
+            if i>=50 && i<=99 {
+                myData.append(Pokemon(nom: pokemons[i], details: "Description du Pokémon n°" + String(i+1), numero: "#0" + String(i+1), photo: String(i+1), type1: types1[i], type2: types2[i]))
+            }
+            if i>=100 {
+                myData.append(Pokemon(nom: pokemons[i], details: "Description du Pokémon n°" + String(i+1), numero: "#" + String(i+1), photo: String(i+1), type1: types1[i], type2: types2[i]))
             }
         }
         myTableView.dataSource = self
@@ -100,21 +104,13 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let currentDateTime = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
-        let dateString = formatter.string(from: currentDateTime)
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
         cell.myName.text = myData[indexPath.row].nom
         cell.myNumero.text = myData[indexPath.row].numero
         cell.myPhoto.image = UIImage(named: myData[indexPath.row].photo)
-        if cell.mySwitch.isOn {
-            cell.myCapture.isHidden = false
-            cell.myCapture.text! += dateString
-        }
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -150,7 +146,11 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         // Use data from the view controller which initiated the unwind segue
     }
-
-
+    
+    
+    
+    
+    
+    
 }
 

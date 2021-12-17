@@ -18,6 +18,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var myNumero: UILabel!
     @IBOutlet weak var myType1: UIImageView!
     @IBOutlet weak var myType2: UIImageView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

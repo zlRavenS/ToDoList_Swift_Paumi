@@ -65,11 +65,6 @@
                                                     <color key="textColor" systemColor="systemYellowColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hDu-Vz-ETk">
-                                                    <rect key="frame" x="285" y="117" width="51" height="31"/>
-                                                    <color key="tintColor" systemColor="systemYellowColor"/>
-                                                    <color key="onTintColor" systemColor="systemYellowColor"/>
-                                                </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="n°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nka-H9-6B6">
                                                     <rect key="frame" x="167" y="16" width="20" height="24"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
@@ -84,33 +79,43 @@
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCg-8f-rVE">
-                                                    <rect key="frame" x="185.5" y="116" width="19.5" height="22"/>
+                                                    <rect key="frame" x="187" y="116" width="19.5" height="22"/>
                                                     <color key="tintColor" systemColor="systemRedColor"/>
                                                     <state key="normal" image="trash" catalog="system">
                                                         <color key="titleColor" systemColor="systemRedColor"/>
                                                     </state>
                                                 </button>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Capturé le : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wee-CX-zOs">
-                                                    <rect key="frame" x="167" y="85" width="54" height="11"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capturé le : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wee-CX-zOs">
+                                                    <rect key="frame" x="167" y="85" width="137" height="11"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <color key="textColor" systemColor="systemYellowColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da7-4B-z61">
+                                                    <rect key="frame" x="334" y="85" width="20" height="30"/>
+                                                    <color key="tintColor" systemColor="systemYellowColor"/>
+                                                    <state key="normal" image="circle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="myButton:" destination="4hl-Us-q9x" eventType="touchUpInside" id="EdY-tL-Qpx"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Wee-CX-zOs" secondAttribute="trailing" constant="50" id="0dI-bB-jfq"/>
+                                                <constraint firstItem="Wee-CX-zOs" firstAttribute="leading" secondItem="SZZ-HF-57j" secondAttribute="trailing" constant="10" id="0q5-XR-oyl"/>
                                                 <constraint firstItem="Nka-H9-6B6" firstAttribute="leading" secondItem="SZZ-HF-57j" secondAttribute="trailing" constant="10" id="7QE-bK-vaD"/>
+                                                <constraint firstItem="da7-4B-z61" firstAttribute="leading" secondItem="Wee-CX-zOs" secondAttribute="trailing" constant="30" id="E6t-xc-Gxl"/>
                                                 <constraint firstItem="SZZ-HF-57j" firstAttribute="leading" secondItem="V6Z-5U-Y6i" secondAttribute="leadingMargin" id="GhZ-SS-ox5"/>
                                                 <constraint firstItem="FCg-8f-rVE" firstAttribute="top" secondItem="FEg-NK-ezs" secondAttribute="bottom" constant="30" id="Odg-iU-J5c"/>
                                                 <constraint firstItem="FEg-NK-ezs" firstAttribute="top" secondItem="Nka-H9-6B6" secondAttribute="bottom" constant="5" id="VUz-qc-A67"/>
+                                                <constraint firstItem="Wee-CX-zOs" firstAttribute="top" secondItem="Nka-H9-6B6" secondAttribute="bottom" constant="45" id="XOu-nQ-Gm0"/>
                                                 <constraint firstItem="SZZ-HF-57j" firstAttribute="top" secondItem="V6Z-5U-Y6i" secondAttribute="topMargin" constant="5" id="Y5O-JA-FoB"/>
+                                                <constraint firstItem="da7-4B-z61" firstAttribute="top" secondItem="V6Z-5U-Y6i" secondAttribute="topMargin" constant="74" id="asK-Zl-Ych"/>
                                                 <constraint firstItem="FEg-NK-ezs" firstAttribute="leading" secondItem="SZZ-HF-57j" secondAttribute="trailing" constant="10" id="d5g-c8-oTG"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="hDu-Vz-ETk" secondAttribute="trailing" constant="20" id="ga7-hG-Q6u"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="SZZ-HF-57j" secondAttribute="bottom" constant="10" id="khr-1k-CcL"/>
-                                                <constraint firstItem="hDu-Vz-ETk" firstAttribute="top" secondItem="V6Z-5U-Y6i" secondAttribute="topMargin" constant="106" id="mrH-Jx-aD2"/>
+                                                <constraint firstItem="FCg-8f-rVE" firstAttribute="leading" secondItem="SZZ-HF-57j" secondAttribute="trailing" constant="30" id="mvE-eV-CbG"/>
                                                 <constraint firstItem="Nka-H9-6B6" firstAttribute="top" secondItem="V6Z-5U-Y6i" secondAttribute="topMargin" constant="5" id="sfW-IB-ehq"/>
-                                                <constraint firstItem="hDu-Vz-ETk" firstAttribute="leading" secondItem="FCg-8f-rVE" secondAttribute="trailing" constant="80" id="uGO-bS-0Pm"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,7 +124,6 @@
                                             <outlet property="myName" destination="FEg-NK-ezs" id="Yyy-Ct-xCc"/>
                                             <outlet property="myNumero" destination="Nka-H9-6B6" id="55a-GI-Fbh"/>
                                             <outlet property="myPhoto" destination="SZZ-HF-57j" id="ZDe-Is-tYV"/>
-                                            <outlet property="mySwitch" destination="hDu-Vz-ETk" id="KJB-LR-2Il"/>
                                             <outlet property="myTrash" destination="FCg-8f-rVE" id="rOf-6V-SPD"/>
                                             <segue destination="hfh-vZ-JtZ" kind="show" identifier="details" id="eWN-qM-r2F"/>
                                         </connections>
@@ -131,6 +135,7 @@
                         <color key="backgroundColor" systemColor="labelColor"/>
                     </view>
                     <connections>
+                        <outlet property="mySearchBar" destination="6xw-ir-lWj" id="y1G-RZ-Tpf"/>
                         <outlet property="myTableView" destination="PI0-rw-Vtf" id="xb2-C3-7w0"/>
                     </connections>
                 </viewController>
@@ -343,6 +348,7 @@
     </scenes>
     <resources>
         <image name="bookmark" catalog="system" width="112" height="128"/>
+        <image name="circle" catalog="system" width="128" height="121"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
